@@ -62,3 +62,6 @@ remix-ide  #注意此时处于项目根目录
 [Fomo3D 合约源码分析](https://github.com/gudqs7/fomo3d_truffle/blob/master/Fomo3D-SourceCode.md)
 
 > 主要是对源码所有合约整理归类, 解释下合约都有啥作用, 希望对刚接触 fomo3d, 想学习 fomo3d 的有所帮助!
+[Fomo3D 合约源码分析](https://github.com/gudqs7/fomo3d_truffle/blob/master/Fomo3D-SourceCode.md)
+
+> 主要是对源码所有合约整理归类, 解释下合约都有啥作用, 希望对刚接触 fomo3d, 想学习 fomo3d 的有所帮助!
