@@ -1,0 +1,49 @@
+sudo apt install npm
+
+sudo apt install git
+
+
+https://nodejs.org/en/下载到/home/ubuntu/node-v8.1.0-linux-x64/bin/node（这个可以随意）
+
+sudo ln /home/ubuntu/node-v8.1.0-linux-x64/bin/node /usr/local/bin/node
+sudo ln /home/ubuntu/node-v8.1.0-linux-x64/bin/npm /usr/local/bin/npm
+
+
+
+下载cnpm 淘宝镜像
+npm install -g cnpm --registry=ry=https://registry.npm.taobao.org
+
+
+下面是部署方法：
+npm install ganache-cli -g
+之后找到ganache-cli在哪里然后ln到/usr/local/bin文件夹，这步可能不需要
+
+另外开一个终端运行：ganache-cli -l 471238800 -g 1 # 开启 testrpc 同时设定 gasLimit 和 gasPrice
+运行之后不用管了，复制私钥出来用于测试
+
+在工程目录下运行：
+npm install truffle -g
+
+truffle compile
+truffle migrate --reset
+
+这里应该会提示少什么东西，比如说Cannot find module 'rlp'
+
+运行cnpm install rlp，或者可以试试npm install rlp，因为我的npm一直有权限问题,所以用cnpm
+反复运行truffle migrate --reset直到没有错误
+运行truffle migrate --reset | grep 'FoMo3Dlong: 0x' | awk  '{ print $2 }'复制打印的合约地址bundle.js的74369行替换掉
+index.html 284行改为<script src="js/bundle.js"></script>
+server.js app.listen(8090);可能需要换个端口，我换成了8090
+
+npm install & npm run start   或者  cnpm install & npm run start
+
+
+之后就可以用谷歌浏览器localhost:8090
+谷歌浏览器要装个metaMask用于签字转账连接到localhost 8545即可，导入之前复制的私钥就有以太了
+
+
+
+
+
+
+
