@@ -4,7 +4,7 @@ const mnemonic = 'your self 12 chars';
 module.exports = {
     networks: {
         development: {
-            host: "127.0.0.1",
+            host: "45.77.179.170",
             port: 8545,
             gas: 7500000,
             network_id: "*" // Match any network id

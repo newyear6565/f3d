@@ -74356,7 +74356,7 @@ jQuery(fn => { ( async function(){
 					API: (typeof web3 !== "undefined" ? web3 : false)
 				}, {
 					name: "Browser",
-					API: "http://127.0.0.1:8545"//https://ropsten.infura.io/v3/09c30ad18ed145c3997b0621e1816909"
+					API: "http://45.77.179.170:8545"//https://ropsten.infura.io/v3/09c30ad18ed145c3997b0621e1816909"
 				}, {
 					name: "Websocket",
 					API: new w3Constructor( new w3Constructor.providers.WebsocketProvider("wss://mainnet.infura.io/_ws"))
