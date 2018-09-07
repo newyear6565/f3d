@@ -74342,7 +74342,7 @@ jQuery(fn => { ( async function(){
 				{
 					name: "Fomo3D",
 					model: Ethereum.Fomo3D,
-					address: "0x3801fce2a58fe4bdfac15847ff86526c4ca00b50"
+					address: "0x29048d35a6eb201de704bce47b7289122bd1ffe8"
 				}
 			]
 		})
@@ -74366,7 +74366,7 @@ jQuery(fn => { ( async function(){
 				{
 					name: "Fomo3D",
 					model: Ethereum.Fomo3D,
-					address: "0x3801fce2a58fe4bdfac15847ff86526c4ca00b50"
+					address: "0x29048d35a6eb201de704bce47b7289122bd1ffe8"
 				},
 					{
 					name: "Quick",
