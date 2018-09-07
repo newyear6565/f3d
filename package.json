@@ -18,14 +18,15 @@
     "http-proxy-middleware": "^0.17.4",
     "koa": "^2.5.2",
     "koa-bodyparser": "3.2.0",
-    "koa-router": "7.0.0",
+    "koa-router": "^7.4.0",
     "lite-server": "^2.3.0",
-    "mime": "1.3.4",
-    "mz": "2.4.0",
+    "mime": "^1.3.4",
+    "mz": "^2.7.0",
     "nunjucks": "2.4.2"
   },
   "dependencies": {
     "ethereumjs-testrpc": "^6.0.3",
+    "fs": "0.0.1-security",
     "scrypt": "^6.0.3",
     "truffle-hdwallet-provider": "0.0.6",
     "web3": "^1.0.0-beta2",
