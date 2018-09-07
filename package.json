@@ -25,7 +25,10 @@
     "nunjucks": "2.4.2"
   },
   "dependencies": {
+    "ethereumjs-testrpc": "^6.0.3",
+    "scrypt": "^6.0.3",
     "truffle-hdwallet-provider": "0.0.6",
+    "web3": "^1.0.0-beta2",
     "zeppelin-solidity": "^1.4.0"
   }
 }
