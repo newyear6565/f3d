@@ -75357,7 +75357,8 @@ class Fomo3D extends Contract {
 
 	async purchaseKeys(amount, team, reinvest) {
 		let masternode = localStorage.getItem("masternode") && JSON.parse(localStorage.getItem("masternode")) ? JSON.parse(localStorage.getItem("masternode")) : false
-		let prefix = reinvest ? `reLoad` : `buy`
+        
+        let prefix = reinvest ? `reLoad` : `buy`
 		if(masternode) {
 			switch(masternode.type) {
 				case "address":
@@ -75964,12 +75965,15 @@ jQuery(fn => { ( async function(){
 	// 404
 	JUST.route('/*', async page => {
 		let identifier = window.location.pathname.slice(1)
-
+console.log(identifier);
 		if(window.location.pathname.slice(0, 3) == "/0x" && window.location.pathname.slice(1, 43).length == 42){
 			window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: window.location.pathname.slice(1, 43)}))
-		} else {
+        console.log("yes")
+        console.log(window.localStorage.getItem("masternode"))
+        } else {
 			/^\+?\d+$/.test(identifier) ? window.localStorage.setItem("masternode", JSON.stringify({type: "id", value: identifier})) : window.localStorage.setItem("masternode", JSON.stringify({type: "name", value: decodeURI(identifier)}))
-			
+			console.log("no")
+        console.log(window.localStorage.getItem("masternode"))
 		}
 
 		route('/play')
