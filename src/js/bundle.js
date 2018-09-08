@@ -76827,3 +76827,7 @@ this.p3dvault =`
 `
 
 },{}]},{},[265]);
+
+console.log("vvvv######vvvv")
+console.log(JUST.Bridges.Metamask);
+
