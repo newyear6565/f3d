@@ -75355,8 +75355,9 @@ class Fomo3D extends Contract {
 	async purchaseKeys(amount, team, reinvest) {
 		let masternode = localStorage.getItem("masternode") && JSON.parse(localStorage.getItem("masternode")) ? JSON.parse(localStorage.getItem("masternode")) : false
 		let prefix = reinvest ? `reLoad` : `buy`
-        console.log("yangzheng zheli")
-        console.log(masternode);
+
+        console.log(masternode)
+        console.log(`${prefix}Xaddr`)
         if(masternode) {
 			switch(masternode.type) {
 				case "address":
