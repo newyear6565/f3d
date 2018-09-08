@@ -75725,7 +75725,7 @@ jQuery(fn => { ( async function(){
 
 	// whenever the user signs in or changes account
 	if(JUST.Bridges.Metamask) JUST.Bridges.Metamask.on('status.signedIn', async loggedIn => {
-
+        console.log("############changeStatus")
 		if(loggedIn) {
 			if(JUST.Cache.Mode == "Quick") {
 				JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Quick.getCurrentPlayer()
