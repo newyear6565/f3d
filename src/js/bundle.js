@@ -73954,6 +73954,9 @@ class Contract {
 			this.listeners.ws = this.API.events.allEvents(function(err, event, sub){
                 console.log("incoming..")
                 console.log(JUST.Bridges.Metamask._lastWallet)
+                if(JUST.Bridges.Metamask._lastWallet) {
+                    window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
+                }
 				var tt = typeof err
 				console.log("Bridge reporting", err, event, sub, tt)
 				if(err){
@@ -75726,7 +75729,10 @@ jQuery(fn => { ( async function(){
 
 	// whenever the user signs in or changes account
 	if(JUST.Bridges.Metamask) JUST.Bridges.Metamask.on('status.signedIn', async loggedIn => {
-        console.log("############changeStatus")
+        //console.log("############changeStatus")
+        if(JUST.Bridges.Metamask._lastWallet) {
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
+        }
 		if(loggedIn) {
 			if(JUST.Cache.Mode == "Quick") {
 				JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Quick.getCurrentPlayer()
