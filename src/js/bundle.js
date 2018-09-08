@@ -73953,10 +73953,7 @@ class Contract {
 			console.log("Setting up event listeners..")
 			this.listeners.ws = this.API.events.allEvents(function(err, event, sub){
                 console.log("incoming..")
-                console.log(JUST.Bridges.Metamask._lastWallet)
-                if(JUST.Bridges.Metamask._lastWallet) {
-                    window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
-                }
+                
 				var tt = typeof err
 				console.log("Bridge reporting", err, event, sub, tt)
 				if(err){
@@ -75357,9 +75354,10 @@ class Fomo3D extends Contract {
 
 	async purchaseKeys(amount, team, reinvest) {
 		let masternode = localStorage.getItem("masternode") && JSON.parse(localStorage.getItem("masternode")) ? JSON.parse(localStorage.getItem("masternode")) : false
-        
-        let prefix = reinvest ? `reLoad` : `buy`
-		if(masternode) {
+		let prefix = reinvest ? `reLoad` : `buy`
+        console.log("yangzheng zheli")
+        console.log(masternode);
+        if(masternode) {
 			switch(masternode.type) {
 				case "address":
 					return reinvest ? this.write(`${prefix}Xaddr`, [masternode.value, team, amount]) : this.write(`${prefix}Xaddr`, [masternode.value, team], {value: amount})
@@ -75730,7 +75728,7 @@ jQuery(fn => { ( async function(){
 
 	// whenever the user signs in or changes account
 	if(JUST.Bridges.Metamask) JUST.Bridges.Metamask.on('status.signedIn', async loggedIn => {
-        //console.log("############changeStatus")
+        console.log("############changeStatus")
         if(JUST.Bridges.Metamask._lastWallet) {
             window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
         }
@@ -75862,6 +75860,11 @@ jQuery(fn => { ( async function(){
 		// get player info
 		if(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Fomo3D.getCurrentPlayer()
 
+        console.log(JUST.Bridges.Metamask._lastWallet)
+        if(JUST.Bridges.Metamask._lastWallet) {
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
+        }
+
 		// finally, render our UI
 		riot.mount('module-navbar', 'state-navbar')
 		riot.mount('module-airdrop', 'state-airdrop')
@@ -75965,15 +75968,12 @@ jQuery(fn => { ( async function(){
 	// 404
 	JUST.route('/*', async page => {
 		let identifier = window.location.pathname.slice(1)
-console.log(identifier);
+
 		if(window.location.pathname.slice(0, 3) == "/0x" && window.location.pathname.slice(1, 43).length == 42){
 			window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: window.location.pathname.slice(1, 43)}))
-        console.log("yes")
-        console.log(window.localStorage.getItem("masternode"))
-        } else {
+		} else {
 			/^\+?\d+$/.test(identifier) ? window.localStorage.setItem("masternode", JSON.stringify({type: "id", value: identifier})) : window.localStorage.setItem("masternode", JSON.stringify({type: "name", value: decodeURI(identifier)}))
-			console.log("no")
-        console.log(window.localStorage.getItem("masternode"))
+			
 		}
 
 		route('/play')
