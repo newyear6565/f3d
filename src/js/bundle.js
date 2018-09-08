@@ -74305,7 +74305,7 @@ namegen = require('./namegenerator.js')
 w3Constructor = require('web3')
 memes = require("./dynamicmemes.js")
 popover = require("./popover.js")
-var testnet = true
+var testnet = false
 
 jQuery(fn => { ( async function(){
 	/**
@@ -74332,7 +74332,7 @@ jQuery(fn => { ( async function(){
 					API: (typeof web3 !== "undefined" ? web3 : false)
 				}, {
 					name: "Browser",
-					API: "https://mainnet.infura.io/v3/09c30ad18ed145c3997b0621e1816909"
+					API: "https://mainnet.infura.io/v3/197a03edc472426aa86ae8a9899b0c7e"
 				}, {
 					name: "Websocket",
 					API: new w3Constructor( new w3Constructor.providers.WebsocketProvider("wss://mainnet.infura.io/_ws"))
@@ -74342,7 +74342,7 @@ jQuery(fn => { ( async function(){
 				{
 					name: "Fomo3D",
 					model: Ethereum.Fomo3D,
-					address: "0x176b464c38cd8fd6271238ca56968c85e5445ce8"
+					address: "0xdc066c14edba00567c1a6c491e2f3a3e66ea2b25"
 				}
 			]
 		})
