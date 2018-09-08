@@ -75736,9 +75736,10 @@ jQuery(fn => { ( async function(){
 			}
 		}
         console.log("#changeStatus")
-        console.log(JUST.Bridges.Metamask)
-        if(JUST.Bridges.Metamask._lastWallet) {
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
+
+        if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
+            console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
         }
 
 		// signal that the UI needs to be refreshed
@@ -75860,11 +75861,12 @@ jQuery(fn => { ( async function(){
 		// get player info
 		if(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Fomo3D.getCurrentPlayer()
 
-        console.log(JUST.Bridges.Metamask._lastWallet)
-        if(JUST.Bridges.Metamask._lastWallet) {
+        console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
+        if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
             console.log("#Init")
-            console.log(JUST.Bridges.Metamask)
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
+            //console.log(JUST.Bridges.Metamask)
+            this.web3.eth.defaultAccount
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
         }
 
 		// finally, render our UI
