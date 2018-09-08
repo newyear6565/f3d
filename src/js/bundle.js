@@ -75835,6 +75835,9 @@ jQuery(fn => { ( async function(){
 	
 	// play slow
 	JUST.route('/play', async masternode => {
+        console.log("vvvv######vvvv")
+
+        console.log(JUST.Bridges.Metamask)
 		JUST.Cache.Mode = "Slow"
 		// get round information
 		JUST.Cache.currentRound = await JUST.Bridges.Browser.contracts.Fomo3D.read("getCurrentRoundInfo")
@@ -76827,7 +76830,4 @@ this.p3dvault =`
 `
 
 },{}]},{},[265]);
-
-console.log("vvvv######vvvv")
-console.log(JUST.Bridges.Metamask);
 
