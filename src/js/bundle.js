@@ -75728,10 +75728,6 @@ jQuery(fn => { ( async function(){
 
 	// whenever the user signs in or changes account
 	if(JUST.Bridges.Metamask) JUST.Bridges.Metamask.on('status.signedIn', async loggedIn => {
-        console.log("############changeStatus")
-        if(JUST.Bridges.Metamask._lastWallet) {
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
-        }
 		if(loggedIn) {
 			if(JUST.Cache.Mode == "Quick") {
 				JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Quick.getCurrentPlayer()
@@ -75739,7 +75735,11 @@ jQuery(fn => { ( async function(){
 				JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Fomo3D.getCurrentPlayer()
 			}
 		}
-
+        console.log("#changeStatus")
+        console.log(JUST.Bridges.Metamask)
+        if(JUST.Bridges.Metamask._lastWallet) {
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
+        }
 
 		// signal that the UI needs to be refreshed
 		JUST.UI.trigger('ui.refresh')
@@ -75862,6 +75862,8 @@ jQuery(fn => { ( async function(){
 
         console.log(JUST.Bridges.Metamask._lastWallet)
         if(JUST.Bridges.Metamask._lastWallet) {
+            console.log("#Init")
+            console.log(JUST.Bridges.Metamask)
             window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask._lastWallet}))
         }
 
