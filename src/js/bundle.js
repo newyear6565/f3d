@@ -73952,7 +73952,8 @@ class Contract {
 		try {
 			console.log("Setting up event listeners..")
 			this.listeners.ws = this.API.events.allEvents(function(err, event, sub){
-				console.log("incoming..")
+                console.log("incoming..")
+                console.log(JUST.Bridges.Metamask._lastWallet)
 				var tt = typeof err
 				console.log("Bridge reporting", err, event, sub, tt)
 				if(err){
