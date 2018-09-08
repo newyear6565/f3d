@@ -75835,7 +75835,7 @@ jQuery(fn => { ( async function(){
 	
 	// play slow
 	JUST.route('/play', async masternode => {
-        console.log(JUST.Bridges.Metamask.web3._lastWallet)
+        console.log(JUST.Bridges.Metamask)
 
 		JUST.Cache.Mode = "Slow"
 		// get round information
