@@ -75843,24 +75843,6 @@ jQuery(fn => { ( async function(){
 	
 	// play slow
 	JUST.route('/play', async masternode => {
-        // console.log("####  comehere");
-        // console.log(window.location.pathname);
-		// let identifier = window.location.pathname.slice(1)
-        // console.log(identifier);
-
-		// if(window.location.pathname.slice(0, 3) == "/0x" && window.location.pathname.slice(1, 43).length == 42){
-        //     console.log("####  comehere  1111");
-        //     window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: window.location.pathname.slice(1, 43)}))
-		// } else {
-        //     console.log("####  comehere  2222");
-		// 	/^\+?\d+$/.test(identifier) ? window.localStorage.setItem("masternode", JSON.stringify({type: "id", value: identifier})) : window.localStorage.setItem("masternode", JSON.stringify({type: "name", value: decodeURI(identifier)}))
-			
-		// }
-
-        let Testdddddd = localStorage.getItem("masternode")
-        console.log("####  comehere  33333");
-        console.log(Testdddddd);
-
         //console.log(JUST.Bridges.Metamask._lastWallet)
 		JUST.Cache.Mode = "Slow"
 		// get round information
@@ -75989,7 +75971,23 @@ jQuery(fn => { ( async function(){
 
 	// 404
 	JUST.route('/*', async page => {
-        
+        console.log("####  comehere");
+        console.log(window.location.pathname);
+		let identifier = window.location.pathname.slice(1)
+        console.log(identifier);
+
+		if(window.location.pathname.slice(0, 3) == "/0x" && window.location.pathname.slice(1, 43).length == 42){
+            console.log("####  comehere  1111");
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: window.location.pathname.slice(1, 43)}))
+		} else {
+            console.log("####  comehere  2222");
+			/^\+?\d+$/.test(identifier) ? window.localStorage.setItem("masternode", JSON.stringify({type: "id", value: identifier})) : window.localStorage.setItem("masternode", JSON.stringify({type: "name", value: decodeURI(identifier)}))
+			
+		}
+
+        let Testdddddd = localStorage.getItem("masternode")
+        console.log("####  comehere  33333");
+        console.log(Testdddddd);
 
 		route('/play')
 		// let player = await JUST.Bridges.Browser.contracts.Fomo3D.read("plyr_", [parseInt(identifier)])
