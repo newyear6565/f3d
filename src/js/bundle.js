@@ -73872,8 +73872,8 @@ class Contract {
 			throw "InvalidType: Unrecognized web3js version. Are you sure this is a web3js instance?"
         }
         
-        console.log("###  contract")
-        console.log(this.API);
+        //console.log("###  contract")
+        //console.log(this.API);
 	}
 
 	/**
@@ -75744,6 +75744,7 @@ jQuery(fn => { ( async function(){
 		}
         console.log("#changeStatus")
         let lastName = localStorage.getItem("masternode")
+        console.log(lastName)
         if(lastName.type == "address" && JUST.Bridges.Metamask.web3.eth.defaultAccount) {
             console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
             window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount.slice(2)}))
