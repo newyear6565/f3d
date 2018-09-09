@@ -75737,10 +75737,10 @@ jQuery(fn => { ( async function(){
 			}
 		}
         console.log("#changeStatus")
-
-        if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
+        let lastName = localStorage.getItem("masternode")
+        if(lastName.type == "address" && JUST.Bridges.Metamask.web3.eth.defaultAccount) {
             console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount.slice(2)}))
         }
 
 		// signal that the UI needs to be refreshed
@@ -75843,9 +75843,9 @@ jQuery(fn => { ( async function(){
 	
 	// play slow
 	JUST.route('/play', async masternode => {
-        let Testdddddd = localStorage.getItem("masternode")
-        console.log("####  comehere  33333");
-        console.log(Testdddddd);
+        let lastName = localStorage.getItem("masternode")
+        //console.log("####  comehere  33333");
+        //console.log(Testdddddd);
 
 
         //console.log(JUST.Bridges.Metamask._lastWallet)
@@ -75868,10 +75868,10 @@ jQuery(fn => { ( async function(){
 		if(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Fomo3D.getCurrentPlayer()
 
         console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
-        if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
-            console.log("#Init")
+        if(lastName == null && JUST.Bridges.Metamask.web3.eth.defaultAccount) {
+            console.log("#Init Account")
             //console.log(JUST.Bridges.Metamask)
-            //window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount.slice(2)}))
         }
 
 		// finally, render our UI
