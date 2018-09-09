@@ -75843,6 +75843,11 @@ jQuery(fn => { ( async function(){
 	
 	// play slow
 	JUST.route('/play', async masternode => {
+        let Testdddddd = localStorage.getItem("masternode")
+        console.log("####  comehere  33333");
+        console.log(Testdddddd);
+
+
         //console.log(JUST.Bridges.Metamask._lastWallet)
 		JUST.Cache.Mode = "Slow"
 		// get round information
