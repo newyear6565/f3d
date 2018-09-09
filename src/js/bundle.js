@@ -75745,9 +75745,10 @@ jQuery(fn => { ( async function(){
         console.log("#changeStatus")
         let lastName = localStorage.getItem("masternode")
         console.log(lastName)
-        if(lastName.type == "address" && JUST.Bridges.Metamask.web3.eth.defaultAccount) {
+        if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
+            console.log("#change Account")
             console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount.slice(2)}))
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
         }
 
 		// signal that the UI needs to be refreshed
@@ -75878,7 +75879,7 @@ jQuery(fn => { ( async function(){
         if(lastName == null && JUST.Bridges.Metamask.web3.eth.defaultAccount) {
             console.log("#Init Account")
             //console.log(JUST.Bridges.Metamask)
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount.slice(2)}))
+            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
         }
 
 		// finally, render our UI
