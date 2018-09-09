@@ -73865,8 +73865,10 @@ class Contract {
 		}
 
 		if(this.bridge.web3.version.api && this.bridge.web3.version.api.includes("0.2")){
+            console.log("###  0.2");
 			this.API = this.bridge.web3.eth.contract(this.options.ABI).at(this.options.address)
 		} else if (this.bridge.web3.version.includes("1.")) {
+            console.log("###  1.0");
 			this.API = new this.bridge.web3.eth.Contract(this.options.ABI, this.options.address)
 		} else {
 			throw "InvalidType: Unrecognized web3js version. Are you sure this is a web3js instance?"
