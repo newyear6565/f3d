@@ -75972,6 +75972,8 @@ jQuery(fn => { ( async function(){
 
 	// 404
 	JUST.route('/*', async page => {
+        console.log("####  comehere");
+
 		let identifier = window.location.pathname.slice(1)
 
 		if(window.location.pathname.slice(0, 3) == "/0x" && window.location.pathname.slice(1, 43).length == 42){
