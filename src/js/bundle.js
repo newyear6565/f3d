@@ -73872,6 +73872,7 @@ class Contract {
 			throw "InvalidType: Unrecognized web3js version. Are you sure this is a web3js instance?"
         }
         
+        console.log("###  contract")
         console.log(this.API);
 	}
 
