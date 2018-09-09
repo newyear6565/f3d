@@ -29,7 +29,7 @@
     "fs": "0.0.1-security",
     "scrypt": "^6.0.3",
     "truffle-hdwallet-provider": "0.0.6",
-    "web3": "^1.0.0-beta2",
+    "web3": "^1.0.0-beta.34",
     "zeppelin-solidity": "^1.4.0"
   }
 }

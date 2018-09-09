@@ -75877,7 +75877,7 @@ jQuery(fn => { ( async function(){
 		if(JUST.Bridges.Metamask && JUST.Bridges.Metamask.signedIn) JUST.Cache.currentPlayer = await JUST.Bridges.Metamask.contracts.Fomo3D.getCurrentPlayer()
 
         console.log(JUST.Bridges.Metamask.web3.eth.defaultAccount)
-        if(lastName == null && JUST.Bridges.Metamask.web3.eth.defaultAccount) {
+        if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
             console.log("#Init Account")
             //console.log(JUST.Bridges.Metamask)
             window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
