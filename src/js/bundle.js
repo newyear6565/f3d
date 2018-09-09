@@ -75677,7 +75677,7 @@ jQuery(fn => { ( async function(){
 					API: "https://mainnet.infura.io/v3/197a03edc472426aa86ae8a9899b0c7e"
 				}, {
 					name: "Websocket",
-					API: new w3Constructor( new w3Constructor.providers.WebsocketProvider("wss://mainnet.infura.io/_ws"))
+					API: new w3Constructor( new w3Constructor.providers.WebsocketProvider("wss://mainnet.infura.io/ws"))
 				}
 			],
 			contracts: [
@@ -75866,8 +75866,7 @@ jQuery(fn => { ( async function(){
         if(JUST.Bridges.Metamask.web3.eth.defaultAccount) {
             console.log("#Init")
             //console.log(JUST.Bridges.Metamask)
-            this.web3.eth.defaultAccount
-            window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
+            //window.localStorage.setItem("masternode", JSON.stringify({type: "address", value: JUST.Bridges.Metamask.web3.eth.defaultAccount}))
         }
 
 		// finally, render our UI
