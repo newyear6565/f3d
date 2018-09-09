@@ -73917,7 +73917,6 @@ class Contract {
 	 */
 	async write(fn, params, metadata){
 		if(this.bridge.web3.version.api && this.bridge.web3.version.api.includes("0.2")){
-            console.log("###  0.2")
 			if(!params || typeof params === "undefined") params = []
 			if(!Array.isArray(params)) params = [params]
 			return new Promise((res, rej) => {
@@ -73934,7 +73933,6 @@ class Contract {
 					
 				})
 		} else if (this.bridge.web3.version.includes("1.")) {
-            console.log("###  1.0")
 			if(!params || typeof params === "undefined") params = []
 			if(!Array.isArray(params)) params = [params]
 			if(!metadata || typeof metadata !== "object") metadata = {}
