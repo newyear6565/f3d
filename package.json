@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "ethereumjs-testrpc": "^6.0.3",
+    "events": "^3.0.0",
     "fs": "0.0.1-security",
     "scrypt": "^6.0.3",
     "truffle-hdwallet-provider": "0.0.6",
