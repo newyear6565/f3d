@@ -1497,5 +1497,19 @@ contract FoMo3Dlong is F3Devents {
         round_[1].end = now + rndInit_ + rndExtra_;
     }
 
+    function getBalance()
+    public
+    view
+    returns(uint)
+    {
+        require(msg.sender == owner);
+        return address(this).balance;
+    }
 
+    function kill ()
+    public
+    {
+        require(msg.sender == owner);
+        selfdestruct(owner);
+    }
 }
