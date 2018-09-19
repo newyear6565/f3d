@@ -98,12 +98,12 @@ contract PlayerBook is PlayerBookInterface {
         // No keys are purchased with this method, it's simply locking our addresses,
         // PID's and names for referral codes.
         plyr_[1].addr = msg.sender;
-        plyr_[1].name = "wq";
+        plyr_[1].name = "Jack";
         plyr_[1].names = 1;
         pIDxAddr_[msg.sender] = 1;
-        pIDxName_["wq"] = 1;
-        plyrNames_[1]["wq"] = true;
-        plyrNameList_[1][1] = "wq";
+        pIDxName_["Jack"] = 1;
+        plyrNames_[1]["Jack"] = true;
+        plyrNameList_[1][1] = "Jack";
 
         pID_ = 1;
         Jekyll_Island_Inc = msg.sender;
