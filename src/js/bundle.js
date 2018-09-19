@@ -7,7 +7,7 @@ module.exports = require('./register')().Promise
 var REGISTRATION_KEY = '@@any-promise/REGISTRATION',
     // Prior registration (preferred or detected)
     registered = null
-
+var tutorial_mode = true;
 /**
  * Registers the given implementation.  An implementation must
  * be registered prior to any call to `require("any-promise")`,
