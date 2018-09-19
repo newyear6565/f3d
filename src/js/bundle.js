@@ -75979,10 +75979,10 @@ jQuery(fn => { ( async function(){
 		riot.mount('module-template', 'state-p3d')
 	})
 			// shakedown for scary
-	JUST.route('/shakedown', function(){
-		riot.mount('module-template', 'state-shakedown')
-		riot.mount('module-navbar', 'state-shakedownnav')
-	})
+	// JUST.route('/shakedown', function(){
+	// 	riot.mount('module-template', 'state-shakedown')
+	// 	riot.mount('module-navbar', 'state-shakedownnav')
+	// })
 
 	// 404
 	JUST.route('/*', async page => {
@@ -76034,7 +76034,8 @@ jQuery(fn => { ( async function(){
 	JUST.route(function(){
 		if(!localStorage.getItem("returningVisitor")){
 			localStorage.setItem("returningVisitor", true)
-			route('/shakedown')
+            route('/play')
+            //route('/shakedown')
 		} else {
 			route('/play')
 		}
