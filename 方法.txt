@@ -1,4 +1,4 @@
-sudo apt install npm
+﻿sudo apt install npm
 
 sudo apt install git
 
@@ -8,7 +8,11 @@ https://nodejs.org/en/下载到/home/ubuntu/node-v8.1.0-linux-x64/bin/node（这
 sudo ln /home/ubuntu/node-v8.1.0-linux-x64/bin/node /usr/local/bin/node
 sudo ln /home/ubuntu/node-v8.1.0-linux-x64/bin/npm /usr/local/bin/npm
 
-
+【CentOs不行】只能设置PATH变量
+vim ~/.bashrc
+//在最后一行添上：
+export PATH=/home/ubuntu/node-v8.1.0-linux-x64/bin:$PATH
+输入“source ~/.bashrc”命令，立即生效
 
 下载cnpm 淘宝镜像
 npm install -g cnpm --registry=ry=https://registry.npm.taobao.org
@@ -36,6 +40,9 @@ index.html 284行改为<script src="js/bundle.js"></script>
 server.js app.listen(8090);可能需要换个端口，我换成了8090
 
 npm install & npm run start   或者  cnpm install & npm run start
+
+【后台运行】关闭当前终端服务器仍可运行
+nohup npm run start > log.txt
 
 
 之后就可以用谷歌浏览器localhost:8090
