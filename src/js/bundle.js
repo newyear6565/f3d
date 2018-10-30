@@ -75691,7 +75691,7 @@ jQuery(fn => { ( async function(){
 				{
 					name: "Fomo3D",
 					model: Ethereum.Fomo3D,
-					address: "0xdc066c14edba00567c1a6c491e2f3a3e66ea2b25"
+					address: "0x5783b99f9558aabc55774315e37e1251e50290e1"
 				}
 			]
 		})
